@@ -12,7 +12,7 @@
 % ============================================================
 %  TITEL
 % ============================================================
-\title{Digital Twins for Predictive Maintenance}
+\title{Digital Twins for Predictive Maintenance in Automotive Aftersales}
 
 % ============================================================
 %  AUTOREN  -- alle 3 Gruppenmitglieder eintragen
@@ -23,23 +23,24 @@
     \textit{Wirtschaftsinformatik} \\
     \textit{DHBW Stuttgart} \\
     Stuttgart, Germany \\
-    % TODO: E-Mail eintragen
-    }
+    wi23030@lehre.dhbw-stuttgart.de
+  }
   \and
   \IEEEauthorblockN{Maksim Bogachenkov}
   \IEEEauthorblockA{
     \textit{Wirtschaftsinformatik} \\
     \textit{DHBW Stuttgart} \\
     Stuttgart, Germany \\
-    % TODO: E-Mail eintragen
-    }
+    wi23024@lehre.dhbw-stuttgart.de
+  }
   \and
   \IEEEauthorblockN{Joel Yerai Martinez Campo}
   \IEEEauthorblockA{
     \textit{Wirtschaftsinformatik} \\
     \textit{DHBW Stuttgart} \\
     Stuttgart, Germany \\
-    wi23194@lehre.dhbw-stuttgart.de}
+    wi23194@lehre.dhbw-stuttgart.de
+  }
 }
 
 \maketitle
@@ -61,85 +62,100 @@ Digital Twin, Predictive Maintenance, Industry~4.0, Machine Learning, IoT, Condi
 % ============================================================
 \section{Introduction}
 % ============================================================
-% - Relevanz: Industrie 4.0, steigende Komplexitaet von Anlagen
-% - Problemstellung: ungeplante Ausfaelle, hohe Wartungskosten,
-%   zeitbasierte Wartung als ineffizient
-% - Zielsetzung des Papers und Forschungsfragen
-% - Aufbau des Papers (kurz, 2-3 Saetze)
 
-TODO: Introduction.
-
-
-% ============================================================
-\section{Fundamentals of Digital Twins}
-% ============================================================
-% - Definition und Konzept des Digitalen Zwillings (Industry 4.0)
-% - Technische Architektur: Sensoren, IoT-Plattformen,
-%   Datenanalytik, KI-Komponenten
-% - Arten von Digital Twins: Produkt-, Prozess-, System-Zwilling
-% - Lebenszyklus-Begleitung eines physischen Objekts
-
-TODO: Fundamentals of Digital Twins.
+\begin{itemize}
+  \item Hook
+  \item Smart to Wise Bezug
+  \item Problemstellung
+  \item Zeilsetzung
+  \item RQ, Forschunslücke
+  \item Beitrag der Arbeit
+  \item Aufbau der Arbeit
+\end{itemize}
 
 
 % ============================================================
-\section{Predictive Maintenance: Concepts and Approaches}
+\section{Related Works \& Theoretical Background}
 % ============================================================
-% - Abgrenzung: reaktive / praeventive / praediktive Wartung
-% - Datenquellen: Sensordaten, Betriebsparameter, Umgebungsdaten
-% - Machine-Learning-Modelle fuer Fehler- und Ausfallprognose
-%   (z.B. Anomalieerkennung, Zeitreihenanalyse, Klassifikation)
 
-TODO: Predictive Maintenance concepts.
+\subsection{Digital Twins}
+
+\subsection{Vehicle Maintenance Strategies}
+
+Vehicle maintenance strategies form a maturity hierarchy: reactive maintenance repairs only after failure \cite{abougrad2026xai}; preventive maintenance schedules service at fixed mileage or time intervals, leading to either premature replacement or undetected wear \cite{abougrad2026xai,aichi2024multilayered}; condition-based maintenance (CBM) couples the service decision to sensor thresholds \cite{aichi2024multilayered}; and predictive maintenance (PdM) extends CBM by forecasting the future evolution of degradation, estimating the remaining time or distance until end-of-life is reached \cite{kumar2025suspension,abougrad2026xai}.
+
+PdM relies on three data layers: on-board sensors delivering high-frequency signals such as vibration, current, voltage, and cell temperature \cite{kumar2025suspension,karthick2025simulating,aichi2024multilayered}; the On-Board Diagnostic (OBD) interface providing standardized diagnostic codes \cite{zhang2009connected,coppola2016connected}; and over-the-air (OTA) telematics enabling continuous low-latency exchange with the backend \cite{lopes2025vehicledt,karthick2025simulating,coppola2016connected}. Together, these layers transform the vehicle from a periodically inspected asset into a continuously observed system, a shift first documented by Zhang et al.~\cite{zhang2009connected} in their work on Connected Vehicle Diagnostics and Prognostics at General Motors.
+
+PdM at this scale is not a stand-alone technique but a service layer built on a digital twin (DT) of the vehicle. As Lopes et al.~\cite{lopes2025vehicledt} and Hadraoui et al.~\cite{aichi2024multilayered} describe, the DT supplies the synchronized virtual representation against which sensor streams are interpreted, anomalies detected, and remaining-useful-life estimates computed. Without a DT, telemetry must be processed in isolation; without PdM, the DT remains a passive monitor. In current automotive DT architectures, predictive analytics is therefore typically positioned as a dedicated microservice within the DT's analytics core \cite{lopes2025vehicledt,karthick2025simulating,abougrad2026xai}.
+
+\subsection{Machine Learning in PdM}
+
+Three problem classes structure ML-based PdM. Classification assigns sensor patterns to discrete fault categories using Support Vector Machines, Random Forests, or Convolutional Neural Networks on time-frequency representations of vibration signals \cite{kumar2025suspension,abougrad2026xai}. Regression targets Remaining Useful Life (RUL) estimation, dominated by Long Short-Term Memory (LSTM) networks for their ability to model long-range temporal dependencies in degradation signals \cite{karthick2025simulating,abougrad2026xai}. Anomaly detection operates without explicit labels, learning nominal behavior and flagging deviations as failure precursors \cite{karthick2025simulating,abougrad2026xai}. AbouGrad et al.~\cite{abougrad2026xai} report classification accuracies of approximately 89\% for vibration-based fault detection and 92\% for LSTM-based RUL estimation in automotive contexts, though they emphasize that these figures depend strongly on dataset quality and operating conditions.
+
+A recurring constraint is data: AbouGrad et al.~\cite{abougrad2026xai} and Hadraoui et al.~\cite{aichi2024multilayered} note that preprocessing consumes 70--90\% of project time, genuine failure data is structurally scarce, and public benchmarks representative of in-service behavior are largely absent. Model-based and hybrid approaches that embed physical degradation laws into the learning pipeline are therefore preferred over purely data-driven ones, as they extrapolate more reliably under data scarcity \cite{kumar2025suspension,aichi2024multilayered,wang2023review}. Beyond accuracy, deployment in safety-relevant contexts raises the question of explainability: deep architectures achieve high accuracy but operate as opaque models whose decisions cannot readily be justified to engineers, customers, or regulators \cite{abougrad2026xai}. Explainable AI (XAI) techniques such as feature attribution and attention-based saliency are increasingly integrated into PdM pipelines to expose the reasoning behind a prediction, marking the conceptual bridge from smart to wise information systems \cite{abougrad2026xai}.
+
+\subsection{Automotive Aftersales \& Customer Lifecycle}
 
 
+\texttt{Forschungslücke}
+
+While these contributions establish the technical foundations of DT-based PdM, existing work concentrates either on algorithmic aspects in isolation \cite{kumar2025suspension,abougrad2026xai} or on industrial and aerospace applications \cite{wang2023review}. The integration of DT-based PdM into automotive aftersales business models --- including its implications for customer interaction, upselling potential, and vehicle lifecycle value --- remains underexplored. The present work addresses this gap.
 % ============================================================
-\section{Digital Twins Enabling Predictive Maintenance}
+\section{Methodology}
 % ============================================================
-% - Wie der Digital Twin PdM konkret ermoeglicht:
-%   Echtzeit-Monitoring, Simulation, virtuelle Sensoren
-% - Datenintegration und -verarbeitung im Twin
-% - Feedback-Loop: Simulationsergebnisse -> Steuerung der Anlage
-% - Herausforderungen: Datenqualitaet, Latenz, Modellgenauigkeit
 
-TODO: Integration of Digital Twin and PdM.
-
-
-% ============================================================
-\section{Case Studies}
-% ============================================================
-% Mindestens EIN konkretes Praxisbeispiel aus:
-%   - produzierender Industrie  ODER
-%   - Energiebranche            ODER
-%   - Logistik
-% Struktur je Beispiel:
-%   - Unternehmen/Kontext, eingesetzte Technologie,
-%     Ergebnisse (Ausfallreduktion, Kosteneinsparung), Lessons Learned
-
-TODO: Case study / case studies.
-
-
-% ============================================================
-\section{Economic and Organizational Aspects}
-% ============================================================
-% - Investitionskosten und Skalierbarkeit
-% - Return on Investment (ROI): Beispielrechnung oder Studienwerte
-% - Organisatorische Herausforderungen:
-%   Change Management, Qualifikation der Mitarbeiter,
-%   Datenschutz und IT-Sicherheit
-
-TODO: Economic and organizational aspects.
+\begin{itemize}
+  \item LR
+  \item Ilustrative Case Study
+  \item (DSR)
+\end{itemize}
 
 
 % ============================================================
-\section{Conclusion}
+\section{Reference Architecture}
 % ============================================================
-% - Zusammenfassung der wichtigsten Erkenntnisse
-% - Kritische Reflexion: Grenzen und offene Fragen
-% - Ausblick: zukuenftige Entwicklungen (z.B. Edge AI,
-%   autonome Wartungssysteme, standardisierte Twin-Plattformen)
 
-TODO: Conclusion. \cite{grieves2014}
+\begin{itemize}
+  \item Sensorik
+  \item ML-Algorithmen
+  \item Kennzahlen
+  \item Schnittstellen
+  \item Datenmanagement
+\end{itemize}
+
+
+% ============================================================
+\section{Ilustrative Case Study}
+% ============================================================
+
+\subsection{Lifecycle Comparison}
+
+\subsection{Assumption Framework}
+
+\subsection{Ilustrative Calculation \& Results}
+
+\subsection{Limitations}
+
+
+% ============================================================
+\section{Discussion and Recommendations}
+% ============================================================
+
+\begin{itemize}
+  \item Interpretation der Ergebnisse
+  \item Implikationen fuer Forschung und Praxis
+\end{itemize}
+
+
+% ============================================================
+\section{Conclusion \& Future Work}
+% ============================================================
+
+\begin{itemize}
+  \item Zusammenfassung der wichtigsten Erkenntnisse
+  \item Beitrag der Arbeit
+  \item Ausblick auf weitere Forschung \cite{grieves2014}
+\end{itemize}
 
 
 % ============================================================
