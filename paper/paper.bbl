@@ -21,6 +21,43 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{lopes2025vehicledt}
+J.~Lopes, A.~Reis, L.~Barbosa, and J.~Barroso, ``A vehicle digital twin in the
+  context of a software ecosystem,'' in \emph{2025 IEEE Vehicle Power and
+  Propulsion Conference (VPPC)}, 2025, pp. 1--6.
+
+\bibitem{coppola2016connected}
+\BIBentryALTinterwordspacing
+R.~Coppola and M.~Morisio, ``Connected car: Technologies, issues, future
+  trends,'' \emph{ACM Comput. Surv.}, vol.~49, no.~3, Oct. 2016. [Online].
+  Available: \url{https://doi.org/10.1145/2971482}
+\BIBentrySTDinterwordspacing
+
+\bibitem{challagalla_proactive_2009}
+\BIBentryALTinterwordspacing
+G.~Challagalla, R.~Venkatesh, and A.~K. Kohli, ``Proactive postsales service:
+  When and why does it pay off?'' vol.~73, no.~2, pp. 70--87. [Online].
+  Available: \url{https://doi.org/10.1509/jmkg.73.2.70}
+\BIBentrySTDinterwordspacing
+
+\bibitem{sabbagha_impact_2016}
+\BIBentryALTinterwordspacing
+O.~Sabbagha, M.~N.~A. Rahman, W.~R. Ismail, and W.~M. H.~W. Hussain, ``Impact
+  of quality management systems and after-sales key performance indicators on
+  automotive industry: A literature review,'' vol. 224, pp. 68--75. [Online].
+  Available:
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S1877042816304852}
+\BIBentrySTDinterwordspacing
+
+\bibitem{grieves2014}
+M.~Grieves, ``Digital twin: Manufacturing excellence through virtual factory
+  replication,'' \emph{White Paper}, 2014.
+
+\bibitem{wang2023review}
+C.~Wang, I.-S. Fan, and S.~King, ``A review of digital twin for vehicle
+  predictive maintenance system,'' in \emph{Proceedings of the SAE AeroTech
+  Conference}, 2023, sAE Technical Paper 2023-01-1024.
+
 \bibitem{abougrad2026xai}
 H.~AbouGrad, V.~Batthula, and F.~Riaz, ``Xai digital twin predictive
   maintenance in the automotive industry: Challenges and opportunities,'' in
@@ -54,23 +91,6 @@ Y.~Zhang, G.~W. Gantt, M.~J. Rychlinski, R.~M. Edwards, J.~J. Correia, and
   initial practice,'' \emph{IEEE Transactions on Reliability}, vol.~58, no.~2,
   pp. 286--294, 2009.
 
-\bibitem{coppola2016connected}
-\BIBentryALTinterwordspacing
-R.~Coppola and M.~Morisio, ``Connected car: Technologies, issues, future
-  trends,'' \emph{ACM Comput. Surv.}, vol.~49, no.~3, Oct. 2016. [Online].
-  Available: \url{https://doi.org/10.1145/2971482}
-\BIBentrySTDinterwordspacing
-
-\bibitem{lopes2025vehicledt}
-J.~Lopes, A.~Reis, L.~Barbosa, and J.~Barroso, ``A vehicle digital twin in the
-  context of a software ecosystem,'' in \emph{2025 IEEE Vehicle Power and
-  Propulsion Conference (VPPC)}, 2025, pp. 1--6.
-
-\bibitem{wang2023review}
-C.~Wang, I.-S. Fan, and S.~King, ``A review of digital twin for vehicle
-  predictive maintenance system,'' in \emph{Proceedings of the SAE AeroTech
-  Conference}, 2023, sAE Technical Paper 2023-01-1024.
-
 \bibitem{mertins_servitization_1999}
 \BIBentryALTinterwordspacing
 S.~Verstrepen, D.~Deschoolmeester, and R.~J. Berg, ``Servitization in the
@@ -79,15 +99,6 @@ S.~Verstrepen, D.~Deschoolmeester, and R.~J. Berg, ``Servitization in the
   and B.~Schallock, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Springer {US},
   pp. 538--545. [Online]. Available:
   \url{http://link.springer.com/10.1007/978-0-387-35569-6_66}
-\BIBentrySTDinterwordspacing
-
-\bibitem{sabbagha_impact_2016}
-\BIBentryALTinterwordspacing
-O.~Sabbagha, M.~N.~A. Rahman, W.~R. Ismail, and W.~M. H.~W. Hussain, ``Impact
-  of quality management systems and after-sales key performance indicators on
-  automotive industry: A literature review,'' vol. 224, pp. 68--75. [Online].
-  Available:
-  \url{https://linkinghub.elsevier.com/retrieve/pii/S1877042816304852}
 \BIBentrySTDinterwordspacing
 
 \bibitem{peters1997it}
@@ -101,13 +112,6 @@ M.~Pophaley and R.~K. Vyas, ``Plant maintenance management practices in
   automobile industries: a retrospective and literature review,'' vol.~3,
   no.~3, pp. 512--541. [Online]. Available:
   \url{http://jiem.org/index.php/jiem/article/view/136}
-\BIBentrySTDinterwordspacing
-
-\bibitem{challagalla_proactive_2009}
-\BIBentryALTinterwordspacing
-G.~Challagalla, R.~Venkatesh, and A.~K. Kohli, ``Proactive postsales service:
-  When and why does it pay off?'' vol.~73, no.~2, pp. 70--87. [Online].
-  Available: \url{https://doi.org/10.1509/jmkg.73.2.70}
 \BIBentrySTDinterwordspacing
 
 \bibitem{gonzalez-pridaDigitalTransformationAftersales2025}

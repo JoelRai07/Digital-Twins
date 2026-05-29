@@ -64,16 +64,36 @@ Digital Twin, Predictive Maintenance, Industry~4.0, Machine Learning, IoT, Condi
 \section{Introduction}
 % ============================================================
 
-\begin{itemize}
-  \item Hook
-  \item Smart to Wise Bezug
-  \item Problemstellung
-  \item Zeilsetzung
-  \item RQ, Forschunslücke
-  \item Beitrag der Arbeit
-  \item Aufbau der Arbeit
-\end{itemize}
+Today's vehicles are connected by default and continuously transmit operating
+data \cite{lopes2025vehicledt,coppola2016connected}, so the information needed
+to judge their technical condition largely exists. Yet aftersales remains
+reactive: even well-connected vehicles are serviced on fixed time or mileage
+intervals rather than on the actual condition of their components. Wear
+parts---brake pads and discs, tyres, ignition parts, or wipers---are replaced
+only once a fault becomes visible, so customers run them to failure and the
+unplanned repair often goes to a cheaper third-party garage. For the
+dealership, which owns the customer relationship, this means losing both the
+repair and one of only a few yearly customer contacts---each also a chance to
+advise, retain, and sell \cite{challagalla_proactive_2009,sabbagha_impact_2016}.
 
+Digital-twin-based predictive maintenance (PdM) can turn this data into
+foresight. A digital twin maintains a synchronised virtual representation of
+the vehicle \cite{grieves2014}, against which machine-learning models forecast
+the remaining useful life of components and recommend replacement before
+failure---keeping the customer at the dealership and enabling transparent,
+targeted upselling. While the building blocks of DT-based PdM are well studied
+in industrial and aerospace settings \cite{wang2023review,abougrad2026xai},
+their integration into automotive aftersales remains underexplored.
+
+This paper therefore asks: \emph{what effect does the proactive use of digital
+twins and predictive maintenance have on the automotive aftersales domain?}
+Focusing on the German market and working with explicitly stated assumptions,
+we (i)~clarify the interplay of DT and PdM in aftersales, (ii)~compare the
+predictive target state (\textit{Soll}) with the interval-based current state
+(\textit{Ist}) to reveal its potentials, and (iii)~derive recommendations for
+the dealership. The paper is structured along the IEEE format: theoretical
+background, methodology, reference architecture, illustrative case study,
+discussion, and conclusion.
 
 % ============================================================
 \section{Related Works \& Theoretical Background}
@@ -160,7 +180,7 @@ While these contributions establish the technical foundations of DT-based PdM, e
 \begin{itemize}
   \item Zusammenfassung der wichtigsten Erkenntnisse
   \item Beitrag der Arbeit
-  \item Ausblick auf weitere Forschung \cite{grieves2014}
+  \item Ausblick auf weitere Forschung
 \end{itemize}
 
 
@@ -185,6 +205,6 @@ for supervising this work.
 \newpage
 \section*{Erklärung zur Nutzung von KI-Tools}
 
-TODO: KI-Erklaerung hier einfuegen (gemaess DHBW-Vorgabe).
+TODO: KI-Erklärung hier einfügen (gemäß DHBW-Vorgabe).
 
 \end{document}
