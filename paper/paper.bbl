@@ -36,16 +36,17 @@ R.~Coppola and M.~Morisio, ``Connected car: Technologies, issues, future
 \bibitem{challagalla_proactive_2009}
 \BIBentryALTinterwordspacing
 G.~Challagalla, R.~Venkatesh, and A.~K. Kohli, ``Proactive postsales service:
-  When and why does it pay off?'' vol.~73, no.~2, pp. 70--87. [Online].
-  Available: \url{https://doi.org/10.1509/jmkg.73.2.70}
+  When and why does it pay off?'' \emph{Journal of Marketing}, vol.~73, no.~2,
+  pp. 70--87, 2009. [Online]. Available:
+  \url{https://doi.org/10.1509/jmkg.73.2.70}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sabbagha_impact_2016}
 \BIBentryALTinterwordspacing
 O.~Sabbagha, M.~N.~A. Rahman, W.~R. Ismail, and W.~M. H.~W. Hussain, ``Impact
   of quality management systems and after-sales key performance indicators on
-  automotive industry: A literature review,'' vol. 224, pp. 68--75. [Online].
-  Available:
+  automotive industry: A literature review,'' \emph{Procedia - Social and
+  Behavioral Sciences}, vol. 224, pp. 68--75, 2016. [Online]. Available:
   \url{https://linkinghub.elsevier.com/retrieve/pii/S1877042816304852}
 \BIBentrySTDinterwordspacing
 
@@ -96,8 +97,8 @@ Y.~Zhang, G.~W. Gantt, M.~J. Rychlinski, R.~M. Edwards, J.~J. Correia, and
 S.~Verstrepen, D.~Deschoolmeester, and R.~J. Berg, ``Servitization in the
   automotive sector: creating value and competitive advantage through service
   after sales,'' in \emph{Global Production Management}, K.~Mertins, O.~Krause,
-  and B.~Schallock, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Springer {US},
-  pp. 538--545. [Online]. Available:
+  and B.~Schallock, Eds.\hskip 1em plus 0.5em minus 0.4em\relax Boston, MA:
+  Springer {US}, 1999, pp. 538--545. [Online]. Available:
   \url{http://link.springer.com/10.1007/978-0-387-35569-6_66}
 \BIBentrySTDinterwordspacing
 
@@ -109,24 +110,18 @@ L.~D. Peters, ``{IT} enabled marketing: A framework for value creation in
 \bibitem{pophaley_plant_2010}
 \BIBentryALTinterwordspacing
 M.~Pophaley and R.~K. Vyas, ``Plant maintenance management practices in
-  automobile industries: a retrospective and literature review,'' vol.~3,
-  no.~3, pp. 512--541. [Online]. Available:
-  \url{http://jiem.org/index.php/jiem/article/view/136}
+  automobile industries: a retrospective and literature review,'' \emph{Journal
+  of Industrial Engineering and Management}, vol.~3, no.~3, pp. 512--541, 2010.
+  [Online]. Available: \url{http://jiem.org/index.php/jiem/article/view/136}
 \BIBentrySTDinterwordspacing
 
 \bibitem{gonzalez-pridaDigitalTransformationAftersales2025}
 \BIBentryALTinterwordspacing
 V.~González-Prida, C.~P. Márquez, P.~V. Gunckel, F.~K. Rodríguez, and A.~C.
   Márquez, ``Digital transformation in aftersales and warranty management: A
-  review of advanced technologies in i4.0,'' vol.~18, no.~4, p. 231. [Online].
-  Available: \url{https://www.mdpi.com/1999-4893/18/4/231}
-\BIBentrySTDinterwordspacing
-
-\bibitem{oecd2024ai}
-\BIBentryALTinterwordspacing
-{OECD}, ``Recommendation of the council on artificial intelligence,'' OECD,
-  OECD Legal Instrument OECD/LEGAL/0449, 2024. [Online]. Available:
-  \url{https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449}
+  review of advanced technologies in {I4.0},'' \emph{Algorithms}, vol.~18,
+  no.~4, p. 231, 2025. [Online]. Available:
+  \url{https://www.mdpi.com/1999-4893/18/4/231}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

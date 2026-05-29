@@ -13,56 +13,46 @@ Database file #1: references.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty journal in challagalla_proactive_2009
-Warning--empty year in challagalla_proactive_2009
-Warning--empty journal in sabbagha_impact_2016
-Warning--empty year in sabbagha_impact_2016
-Warning--empty year in mertins_servitization_1999
-Warning--empty journal in pophaley_plant_2010
-Warning--empty year in pophaley_plant_2010
-Warning--empty journal in gonzalez-pridaDigitalTransformationAftersales2025
-Warning--empty year in gonzalez-pridaDigitalTransformationAftersales2025
 
 Done.
-You've used 16 entries,
+You've used 15 entries,
             4024 wiz_defined-function locations,
-            909 strings with 11488 characters,
-and the built_in function-call counts, 12268 in all, are:
-= -- 967
-> -- 327
-< -- 91
-+ -- 177
-- -- 68
-* -- 642
-:= -- 1881
-add.period$ -- 33
-call.type$ -- 16
-change.case$ -- 19
+            909 strings with 11451 characters,
+and the built_in function-call counts, 12113 in all, are:
+= -- 974
+> -- 323
+< -- 90
++ -- 175
+- -- 67
+* -- 625
+:= -- 1862
+add.period$ -- 31
+call.type$ -- 15
+change.case$ -- 18
 chr.to.int$ -- 195
-cite$ -- 25
-duplicate$ -- 878
-empty$ -- 966
-format.name$ -- 76
-if$ -- 2780
+cite$ -- 15
+duplicate$ -- 861
+empty$ -- 960
+format.name$ -- 75
+if$ -- 2768
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 166
-newline$ -- 85
-num.names$ -- 18
-pop$ -- 389
+int.to.str$ -- 15
+missing$ -- 158
+newline$ -- 80
+num.names$ -- 17
+pop$ -- 360
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 932
+skip$ -- 928
 stack$ -- 0
-substring$ -- 495
-swap$ -- 705
-text.length$ -- 26
+substring$ -- 494
+swap$ -- 703
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 16
-warning$ -- 9
-while$ -- 53
-width$ -- 18
-write$ -- 191
-(There were 9 warnings)
+type$ -- 15
+warning$ -- 0
+while$ -- 52
+width$ -- 17
+write$ -- 187
