@@ -13,46 +13,57 @@ Database file #1: references.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in aljabar_performance_2021
+Warning--empty year in aljabar_performance_2021
+Warning--empty journal in gonzalez_service_2015
+Warning--empty year in gonzalez_service_2015
+Warning--empty journal in balinado_effect_2021
+Warning--empty year in balinado_effect_2021
+Warning--empty journal in borchardt_achieving_2018
+Warning--empty year in borchardt_achieving_2018
+Warning--empty journal in haq_satisfaction_2012
+Warning--empty year in haq_satisfaction_2012
 
 Done.
-You've used 15 entries,
+You've used 20 entries,
             4024 wiz_defined-function locations,
-            909 strings with 11451 characters,
-and the built_in function-call counts, 12113 in all, are:
-= -- 974
-> -- 323
-< -- 90
-+ -- 175
-- -- 67
-* -- 625
-:= -- 1862
-add.period$ -- 31
-call.type$ -- 15
-change.case$ -- 18
-chr.to.int$ -- 195
-cite$ -- 15
-duplicate$ -- 861
-empty$ -- 960
-format.name$ -- 75
-if$ -- 2768
+            935 strings with 12644 characters,
+and the built_in function-call counts, 16307 in all, are:
+= -- 1322
+> -- 416
+< -- 138
++ -- 229
+- -- 81
+* -- 854
+:= -- 2482
+add.period$ -- 41
+call.type$ -- 20
+change.case$ -- 23
+chr.to.int$ -- 297
+cite$ -- 30
+duplicate$ -- 1148
+empty$ -- 1239
+format.name$ -- 92
+if$ -- 3713
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 158
-newline$ -- 80
-num.names$ -- 17
-pop$ -- 360
+int.to.str$ -- 20
+missing$ -- 206
+newline$ -- 103
+num.names$ -- 22
+pop$ -- 463
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 928
+skip$ -- 1248
 stack$ -- 0
-substring$ -- 494
-swap$ -- 703
-text.length$ -- 25
+substring$ -- 743
+swap$ -- 961
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
-warning$ -- 0
-while$ -- 52
-width$ -- 17
-write$ -- 187
+type$ -- 20
+warning$ -- 10
+while$ -- 74
+width$ -- 22
+write$ -- 243
+(There were 10 warnings)

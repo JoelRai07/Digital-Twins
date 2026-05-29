@@ -121,10 +121,6 @@ INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.v
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmrc7t.vf
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1pcr.fd
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1pcr.fd
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ot1pcr.fd
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr7t.tfm
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
@@ -154,8 +150,6 @@ INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\courier\pcrr7t.vf
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
@@ -163,8 +157,6 @@ INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr7t.
 INPUT paper.aux
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
-INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\joely\AppData\Local\Programs\MiKTeX\fonts\type1\urw\times\utmbi8a.pfb

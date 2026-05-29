@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.17)  29 MAY 2026 11:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.17)  29 MAY 2026 11:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -269,24 +269,20 @@ Underfull \vbox (badness 1552) has occurred while \output is active []
 
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 126.
- (C:\Users\joely\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 134.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 132.
  (C:\Users\joely\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 134.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 132.
  (C:\Users\joely\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 4467) in paragraph at lines 190--192
+Underfull \hbox (badness 4467) in paragraph at lines 188--190
 []\OT1/ptm/m/n/10 The au-thors would like to thank Ed-uard Dobenko
  []
 
 (paper.bbl [2])
-Underfull \hbox (badness 4403) in paragraph at lines 208--209
+Underfull \hbox (badness 4403) in paragraph at lines 206--207
 []\OT1/ptm/m/n/10 TODO: KI-Erkl[]arung hier einf[]ugen (gem[]a^^Y DHBW-
  []
 
@@ -308,17 +304,17 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4145 strings out of 467867
- 65609 string characters out of 5418334
- 489548 words of memory out of 5000000
- 32990 multiletter control sequences out of 15000+600000
- 664045 words of font info for 112 fonts, out of 8000000 for 9000
+ 4112 strings out of 467867
+ 65148 string characters out of 5418334
+ 488568 words of memory out of 5000000
+ 32962 multiletter control sequences out of 15000+600000
+ 663530 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,1162b,359s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (3 pages, 94353 bytes).
+ 57i,8n,65p,1517b,359s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (3 pages, 86480 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
+ 38 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
