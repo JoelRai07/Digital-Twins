@@ -19,10 +19,6 @@ Warning--empty journal in gonzalez_service_2015
 Warning--empty year in gonzalez_service_2015
 Warning--empty journal in balinado_effect_2021
 Warning--empty year in balinado_effect_2021
-Warning--empty journal in borchardt_achieving_2018
-Warning--empty year in borchardt_achieving_2018
-Warning--empty journal in haq_satisfaction_2012
-Warning--empty year in haq_satisfaction_2012
 Warning--empty journal in macbryde_role_2006
 Warning--empty year in macbryde_role_2006
 Warning--empty journal in bundschuh_how_2003
@@ -36,45 +32,45 @@ Warning--empty year in tranfield_towards_2003
 Warning--empty year in cooper_gap_2015
 
 Done.
-You've used 27 entries,
+You've used 25 entries,
             4024 wiz_defined-function locations,
-            977 strings with 14215 characters,
-and the built_in function-call counts, 21763 in all, are:
-= -- 1768
-> -- 529
-< -- 194
-+ -- 289
-- -- 97
-* -- 1135
-:= -- 3316
-add.period$ -- 57
-call.type$ -- 27
-change.case$ -- 35
-chr.to.int$ -- 429
-cite$ -- 48
-duplicate$ -- 1523
-empty$ -- 1655
-format.name$ -- 113
-if$ -- 4946
+            967 strings with 13796 characters,
+and the built_in function-call counts, 19984 in all, are:
+= -- 1624
+> -- 490
+< -- 171
++ -- 265
+- -- 92
+* -- 1042
+:= -- 3067
+add.period$ -- 53
+call.type$ -- 25
+change.case$ -- 33
+chr.to.int$ -- 375
+cite$ -- 42
+duplicate$ -- 1405
+empty$ -- 1535
+format.name$ -- 107
+if$ -- 4541
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 264
-newline$ -- 132
-num.names$ -- 33
-pop$ -- 599
+int.to.str$ -- 25
+missing$ -- 246
+newline$ -- 124
+num.names$ -- 31
+pop$ -- 559
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1667
+skip$ -- 1532
 stack$ -- 0
-substring$ -- 1049
-swap$ -- 1270
-text.length$ -- 51
+substring$ -- 921
+swap$ -- 1161
+text.length$ -- 46
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 27
-warning$ -- 21
-while$ -- 108
-width$ -- 29
-write$ -- 317
-(There were 21 warnings)
+type$ -- 25
+warning$ -- 17
+while$ -- 98
+width$ -- 27
+write$ -- 297
+(There were 17 warnings)

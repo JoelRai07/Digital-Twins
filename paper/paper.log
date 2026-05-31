@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.9.8)  31 MAY 2026 13:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.2) (preloaded format=pdflatex 2025.9.8)  31 MAY 2026 16:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -277,15 +277,15 @@ Underfull \vbox (badness 3449) has occurred while \output is active []
 
 
 [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 164.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 168.
  (C:\Users\joely\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 164.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 168.
  (C:\Users\joely\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 4467) in paragraph at lines 183--185
+Underfull \hbox (badness 4467) in paragraph at lines 187--189
 []\OT1/ptm/m/n/10 The au-thors would like to thank Ed-uard Dobenko
  []
 
@@ -296,7 +296,7 @@ Underfull \hbox (badness 4467) in paragraph at lines 183--185
 [3])
 
 
-Underfull \hbox (badness 4403) in paragraph at lines 201--202
+Underfull \hbox (badness 4403) in paragraph at lines 205--206
 []\OT1/ptm/m/n/10 TODO: KI-Erkl[]arung hier einf[]ugen (gem[]a^^Y DHBW-
  []
 
@@ -320,15 +320,15 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4119 strings out of 473523
- 65502 string characters out of 5714631
- 487921 words of memory out of 5000000
- 27313 multiletter control sequences out of 15000+600000
+ 4117 strings out of 473523
+ 65453 string characters out of 5714631
+ 485280 words of memory out of 5000000
+ 27311 multiletter control sequences out of 15000+600000
  594646 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,1517b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,1398b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/joely/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (4 pages, 92264 bytes).
+Output written on paper.pdf (4 pages, 92140 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
