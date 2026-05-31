@@ -23,47 +23,50 @@ Warning--empty journal in borchardt_achieving_2018
 Warning--empty year in borchardt_achieving_2018
 Warning--empty journal in haq_satisfaction_2012
 Warning--empty year in haq_satisfaction_2012
+Warning--empty year in fink_conducting_2019
+Warning--empty journal in tranfield_towards_2003
+Warning--empty year in tranfield_towards_2003
 
 Done.
-You've used 20 entries,
+You've used 22 entries,
             4024 wiz_defined-function locations,
-            935 strings with 12644 characters,
-and the built_in function-call counts, 16307 in all, are:
-= -- 1322
-> -- 416
-< -- 138
-+ -- 229
-- -- 81
-* -- 854
-:= -- 2482
-add.period$ -- 41
-call.type$ -- 20
-change.case$ -- 23
-chr.to.int$ -- 297
-cite$ -- 30
-duplicate$ -- 1148
-empty$ -- 1239
-format.name$ -- 92
-if$ -- 3713
+            945 strings with 13044 characters,
+and the built_in function-call counts, 17577 in all, are:
+= -- 1427
+> -- 441
+< -- 149
++ -- 243
+- -- 85
+* -- 917
+:= -- 2684
+add.period$ -- 45
+call.type$ -- 22
+change.case$ -- 25
+chr.to.int$ -- 321
+cite$ -- 35
+duplicate$ -- 1236
+empty$ -- 1340
+format.name$ -- 97
+if$ -- 3999
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 206
-newline$ -- 103
-num.names$ -- 22
-pop$ -- 463
+int.to.str$ -- 22
+missing$ -- 221
+newline$ -- 111
+num.names$ -- 24
+pop$ -- 498
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1248
+skip$ -- 1350
 stack$ -- 0
-substring$ -- 743
-swap$ -- 961
-text.length$ -- 39
+substring$ -- 802
+swap$ -- 1031
+text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 20
-warning$ -- 10
-while$ -- 74
-width$ -- 22
-write$ -- 243
-(There were 10 warnings)
+type$ -- 22
+warning$ -- 13
+while$ -- 80
+width$ -- 24
+write$ -- 263
+(There were 13 warnings)
