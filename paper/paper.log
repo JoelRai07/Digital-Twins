@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.27)  31 MAY 2026 10:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.27)  31 MAY 2026 10:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -269,20 +269,20 @@ Underfull \vbox (badness 1552) has occurred while \output is active []
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 134.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 136.
  (C:\Users\maksb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 134.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 136.
  (C:\Users\maksb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 4467) in paragraph at lines 190--192
+) [2]
+Underfull \hbox (badness 4467) in paragraph at lines 192--194
 []\OT1/ptm/m/n/10 The au-thors would like to thank Ed-uard Dobenko
  []
 
-(paper.bbl [2]) [3]
-Underfull \hbox (badness 4403) in paragraph at lines 208--209
+(paper.bbl) [3]
+Underfull \hbox (badness 4403) in paragraph at lines 210--211
 []\OT1/ptm/m/n/10 TODO: KI-Erkl[]arung hier einf[]ugen (gem[]a^^Y DHBW-
  []
 
@@ -306,15 +306,15 @@ L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4114 strings out of 467871
- 65086 string characters out of 5418376
- 490543 words of memory out of 5000000
- 32959 multiletter control sequences out of 15000+600000
+ 4115 strings out of 467871
+ 65103 string characters out of 5418376
+ 492547 words of memory out of 5000000
+ 32960 multiletter control sequences out of 15000+600000
  663530 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,8n,65p,1505b,359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/maksb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/maksb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/maksb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/maksb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/maksb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (4 pages, 87886 bytes).
+Output written on paper.pdf (4 pages, 88589 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

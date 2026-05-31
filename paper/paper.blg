@@ -26,47 +26,48 @@ Warning--empty year in haq_satisfaction_2012
 Warning--empty year in fink_conducting_2019
 Warning--empty journal in tranfield_towards_2003
 Warning--empty year in tranfield_towards_2003
+Warning--empty year in cooper_gap_2015
 
 Done.
-You've used 22 entries,
+You've used 23 entries,
             4024 wiz_defined-function locations,
-            945 strings with 13044 characters,
-and the built_in function-call counts, 17577 in all, are:
-= -- 1427
-> -- 441
-< -- 149
-+ -- 243
-- -- 85
-* -- 917
-:= -- 2684
-add.period$ -- 45
-call.type$ -- 22
-change.case$ -- 25
-chr.to.int$ -- 321
-cite$ -- 35
-duplicate$ -- 1236
-empty$ -- 1340
-format.name$ -- 97
-if$ -- 3999
+            953 strings with 13239 characters,
+and the built_in function-call counts, 18420 in all, are:
+= -- 1495
+> -- 460
+< -- 156
++ -- 250
+- -- 88
+* -- 963
+:= -- 2825
+add.period$ -- 48
+call.type$ -- 23
+change.case$ -- 29
+chr.to.int$ -- 339
+cite$ -- 37
+duplicate$ -- 1296
+empty$ -- 1411
+format.name$ -- 101
+if$ -- 4187
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 221
-newline$ -- 111
-num.names$ -- 24
-pop$ -- 498
+int.to.str$ -- 23
+missing$ -- 229
+newline$ -- 116
+num.names$ -- 27
+pop$ -- 519
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1350
+skip$ -- 1413
 stack$ -- 0
-substring$ -- 802
-swap$ -- 1031
-text.length$ -- 42
+substring$ -- 835
+swap$ -- 1074
+text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 22
-warning$ -- 13
-while$ -- 80
-width$ -- 24
-write$ -- 263
-(There were 13 warnings)
+type$ -- 23
+warning$ -- 14
+while$ -- 87
+width$ -- 25
+write$ -- 276
+(There were 14 warnings)
