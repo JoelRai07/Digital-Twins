@@ -186,7 +186,7 @@ anchored to a published figure where one exists and flagged as a set value other
 \midrule
 A1 & Reference vehicle     & Mid-segment ICE passenger car, German market \\
 A2 & Annual mileage        & 12{,}300 km/yr~\cite{kba2024fahrleistung} \\
-A3 & First-owner horizon   & 8 years~\cite{kba2025bestand,mckinsey2025dealer} \\
+A3 & First-owner horizon   & 8 years~\cite{mckinsey2025dealer} \\
 A4 & Workshop visits       & 1.5/yr~\cite{dat2025report} \\
 A5 & Considered wear parts & Brake pads/discs, tyres, wipers, 12\,V battery, spark plugs \\
 A6 & Service gross margin  & 50\,\% (range 45--55\,\%~\cite{mckinsey2025dealer}) \\
@@ -204,7 +204,11 @@ tyres)~\cite{tuev2026report}. Prescriptive maintenance and powertrain overhauls
 are out of scope. Typical replacement intervals and representative German market
 prices (parts plus labour, incl.\ VAT) are given in Table~\ref{tab:wear}; prices
 are published market ranges~\cite{adac2024repair} and major automotive
-service providers used at their midpoints.
+service providers used at their midpoints. Where a published range exists, a
+representative value within it is used; individual prices and intervals may fall toward either end---premium tyres raise the tyre figure, a conventional (non
+start--stop) battery lowers the battery figure---but because every KPI scales
+linearly with $V_{\mathrm{wear}}$, the sensitivity analysis below brackets this
+residual uncertainty and no single assumption drives the result.
  
 \begin{table}[ht!]
 \caption{Wear-part assumptions (midpoints). Prices cover parts plus labour, incl.\ VAT; midpoints of published German market ranges~\cite{adac2024repair}.}
@@ -233,7 +237,7 @@ assumed independently but derived from them.
  
 \begin{table}[h!]
 \caption{Mechanism assumptions (Current State $\rightarrow$ Target State).
-  $^\dagger$Conservative lower bound: accuracy improves continuously with data; false-positive forecasts are simply declined offers.}
+  $^\dagger$Conservative lower bound: accuracy improves continuously with data; customers cannot distinguish a false-positive forecast from a genuine recommendation and retain full decision authority to accept or decline.}
 \label{tab:mech}
 \centering
 \small
@@ -242,32 +246,32 @@ assumed independently but derived from them.
 \textbf{ID} & \textbf{Assumption (Symbol)} & \textbf{Value} & \textbf{Basis} \\
 \midrule
 A8  & Current capture rate ($\cIst$)       & 0.40            & ${<}$43\,\% share~\cite{dat2025report} \\
-A9  & PdM forecast accuracy ($a$)          & 0.90            & 88--92\,\% LSTM-RUL~\cite{abougrad2026xai}$^\dagger$ \\
-A10 & Proactive-offer conversion ($k$)     & 0.50            & Conserv.\ estimate; proactive personalised contact outperforms reactive service uptake~\cite{challagalla_proactive_2009,gonzalez_service_2015} \\
---- & Target capture rate ($\cSoll$, deriv.)& ${\approx}0.67$& $\cIst+(1{-}\cIst)\cdot a\cdot k$ \\
+A9  & PdM forecast accuracy ($a$)          & 0.90            & 89--92\,\% LSTM-RUL~\cite{abougrad2026xai}$^\dagger$; stated for transparency, not a formula input \\
+A10 & Proactive-offer conversion ($k$)     & 0.50            & Conserv.\ estimate; consistent with findings that proactive contact aids uptake~\cite{challagalla_proactive_2009,gonzalez_service_2015} \\
+--- & Target capture rate ($\cSoll$, deriv.)& ${\approx}0.70$& $\cIst+(1{-}\cIst)\cdot k$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
  
 The target capture rate is derived, not assumed: of the leaked share
-$(1-\cIst)$, only the fraction that PdM correctly forecasts ($a$) and that
-converts on a proactive offer ($k$) is recaptured:
+$(1-\cIst)$, the fraction that converts on a proactive offer ($k$) is
+recaptured. Forecast accuracy (A9) does not enter the formula because customers
+cannot distinguish a true-positive forecast from a false-positive one---both
+result in a service recommendation they may accept or decline at rate $k$:
 \begin{align}
-\cSoll &= \cIst + (1-\cIst)\cdot a \cdot k \notag \\
-       &= 0.40 + 0.60 \cdot 0.90 \cdot 0.50 \notag \\
-       &= 0.40 + 0.27 \approx 0.67 .
+\cSoll &= \cIst + (1-\cIst)\cdot k \notag \\
+       &= 0.40 + 0.60 \cdot 0.50 \notag \\
+       &= 0.40 + 0.30 = 0.70 .
 \end{align}
-This construction keeps the result honest and never approaches full capture.
+This construction keeps the estimate conservative and never approaches full capture.
 The conversion rate ($k = 0.50$, A10) is a conservative estimate: proactive,
-personalised maintenance contact from the customer's own dealership consistently
-outperforms reactive service approaches in uptake and loyalty~\cite{challagalla_proactive_2009,gonzalez_service_2015},
+personalised maintenance contact from the customer's own dealership is consistent
+with findings that proactive contact aids uptake and loyalty~\cite{challagalla_proactive_2009,gonzalez_service_2015},
 yet price competition and the availability of independent garages prevent full
-conversion. The forecast accuracy (A9) is included for transparency but places no
-binding constraint on the target state: predictive model performance improves
-continuously as in-service data accumulates, and a false-positive
-forecast---recommending a service that is not yet strictly necessary---imposes no
-cost on the customer, who retains full decision authority and may simply decline
-the offer.
+conversion. The forecast accuracy (A9) places no binding constraint on the target
+state; accuracy improves with data, and a false-positive forecast imposes no
+cost---the customer cannot distinguish it from a genuine recommendation and
+simply chooses to accept or decline the offer (see Section~\ref{sec:lim}).
 
 \subsection{Potential Assessment}
 
@@ -282,14 +286,15 @@ yields the annual addressable wear-part service value per vehicle:
 \begin{align}
 V_{\mathrm{wear}} &= \sum (\text{events/yr} \cdot \text{unit value}) \notag \\
 &= 76.9 + 46.1 + 164.0 + 25.0 + 25.0 + 30.7 \notag \\
-&\approx \eur 368 \quad \text{per vehicle per year.}
+&\approx \eur\,368 \quad \text{per vehicle per year} \notag \\
+&\quad\text{(computed on unrounded rates).}
 \end{align}
  
 \paragraph*{Step 2 --- Captured value}
 Applying the capture rates from Table~\ref{tab:mech}:
 \begin{align}
-\text{Captured}_{\mathrm{cur}} &= \cIst  \cdot V_{\mathrm{wear}} = 0.40 \cdot 368 \approx \eur 147~\text{/veh/yr,} \\
-\text{Captured}_{\mathrm{tgt}} &= \cSoll \cdot V_{\mathrm{wear}} = 0.67 \cdot 368 \approx \eur 247~\text{/veh/yr.}
+\text{Captured}_{\mathrm{cur}} &= \cIst  \cdot V_{\mathrm{wear}} = 0.40 \cdot 368 \approx \eur\,147~\text{/veh/yr,} \\
+\text{Captured}_{\mathrm{tgt}} &= \cSoll \cdot V_{\mathrm{wear}} = 0.70 \cdot 368 \approx \eur\,258~\text{/veh/yr.}
 \end{align}
 Applying the service gross margin (A6) gives the captured gross profit.
  
@@ -300,7 +305,7 @@ linearly to a representative franchised group of 5{,}000 active customer
 vehicles.
  
 \begin{table}[h!]
-\caption{Current-state / target-state KPI comparison.}
+\caption{Current-state / target-state KPI comparison. Delta figures computed directly on unrounded intermediate values; current and target cells rounded independently.}
 \label{tab:kpi}
 \centering
 \small
@@ -308,10 +313,10 @@ vehicles.
 \toprule
 \textbf{KPI} & \textbf{Current} & \textbf{Target} & \textbf{$\Delta$} \\
 \midrule
-Repair capture rate              & 40\,\%     & 67\,\%      & +27\,pp \\
-Wear-part revenue (/veh/yr)      & \eur\,147  & \eur\,247   & +\eur\,100 \\
-Gross profit (/veh/yr)           & \eur\,74   & \eur\,123   & +\eur\,49 \\
-Fleet GP, 5{,}000 veh (/yr)      & \eur\,368k & \eur\,616k  & +\eur\,248k \\
+Repair capture rate              & 40\,\%     & 70\,\%      & +30\,pp \\
+Wear-part revenue (/veh/yr)      & \eur\,147  & \eur\,258   & +\eur\,110 \\
+Gross profit (/veh/yr)           & \eur\,74   & \eur\,129   & +\eur\,55 \\
+Fleet GP, 5{,}000 veh (/yr)      & \eur\,368k & \eur\,644k  & +\eur\,276k \\
 Customer touchpoints (/yr)       & 1.5        & $\sim$2.5   & +1.0 \\
 First-pass inspection rate       & baseline   & improved    & qual. \\
 Lifecycle retention~\cite{mckinsey2025dealer} & $\sim$25\,\% & sustained & qual. \\
@@ -323,7 +328,8 @@ The proactive touchpoint count rises because each high-value forecast event
 (the wear parts in Table~\ref{tab:wear} excluding the wiper case,
 $\approx$~1.0 events/yr) triggers an outreach contact that did not exist in the
 interval-based current state, roughly doubling the meaningful contact frequency
-from 1.5 to about 2.5 per year. Each additional contact is also an advisory and
+from 1.5 to about 2.5 per year, assuming forecast contacts fall outside
+scheduled service visits; overlap would reduce the net gain modestly. Each additional contact is also an advisory and
 upselling opportunity; the parts targeted---brakes and tyres above all---are
 among the most common defect categories in the German mandatory vehicle safety
 inspection (HU)~\cite{tuev2026report}, so proactive replacement directly improves the
@@ -334,39 +340,38 @@ The result depends most on the target capture rate. Varying $\cSoll$ across a
 plausible band while holding $V_{\mathrm{wear}}$ and the 50\,\% margin fixed
 gives a per-vehicle gross-profit delta of:
 \begin{align*}
-\cSoll = 0.60 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur 37~\text{/veh/yr,} \\
-\cSoll = 0.67 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur 50~\text{/veh/yr,} \\
-\cSoll = 0.80 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur 74~\text{/veh/yr.}
+\cSoll = 0.60 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,37~\text{/veh/yr,} \\
+\cSoll = 0.70 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,55~\text{/veh/yr,} \\
+\cSoll = 0.80 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,74~\text{/veh/yr.}
 \end{align*}
 Even at the conservative end the dealership captures additional gross profit on
 the order of tens of euros per vehicle per year, scaling to a six-figure annual
 sum across a mid-size fleet---before accounting for the compounding retention
 effect, namely that dealer-serviced customers are substantially more likely to
-purchase their next vehicle from the same dealership~\cite{coxautomotive2025}. The
+purchase their next vehicle from the same dealership~\cite{coxautomotive2025} (US data). The
 economic case is therefore robust to the assumptions rather than an artefact of
 any single optimistic value.
 
-\subsection{Limitations}
+\subsection{Limitations}\label{sec:lim}
 
 The analysis is intentionally assumption-driven and carries corresponding
 limitations. First, the figures are illustrative: $V_{\mathrm{wear}}$, the capture
 rates and the conversion factor are anchored to published market and accuracy
 data but are not fitted to an operational dataset, and no prototype was built;
 the contribution is a transparent model of the potential, not a measured
-outcome. Second, the PdM accuracy assumption (A9) is retained for completeness but
-places no binding constraint on the target state. Model accuracy improves
-continuously as in-service data accumulates~\cite{abougrad2026xai}, and a
-false-positive forecast---predicting wear that has not yet fully
-materialised---imposes no cost: the customer retains full decision authority and
-may simply decline the proactive offer. A real deployment would still see
-accuracy vary by component and data quality, but neither concern fundamentally
-limits the approach. Third, and most
+outcome. Second, the PdM forecast accuracy (A9, 90\,\%) is reported for transparency
+but does not enter the capture-rate formula. Because a proactive service
+recommendation looks identical to the customer whether the underlying forecast
+is correct or slightly premature, both true-positive and false-positive
+predictions generate the same type of offer, accepted or declined at rate $k$.
+Accuracy will improve continuously as in-service data accumulates~\cite{abougrad2026xai},
+but the model outcome does not depend on reaching any particular accuracy threshold. Third, and most
 consequential for practice, the target state presumes the dealership can actually
 obtain the vehicle's telemetry. Under the EU Data Act (applicable from
-12~September~2025) the data subject is the vehicle user, who may authorise a
+12~September~2025) the user is the vehicle owner or driver, who may authorise a
 third party such as the dealership to receive in-vehicle data on fair,
 reasonable and non-discriminatory terms, while the OEM remains the data holder;
-personal data additionally requires a lawful basis under the General Data Protection Regulation (GDPR)~\cite{eu2023dataact}.
+where the data is personal, the GDPR additionally requires a lawful basis~\cite{eu2023dataact}.
 Access is thus contingent on customer consent, OEM provisioning in a usable
 format, and business-to-business (B2B) compensation --- a non-technical adoption barrier that the model
 does not price in. Finally, two scope caveats apply: tyres, though included as a
