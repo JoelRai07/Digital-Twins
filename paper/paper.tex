@@ -105,7 +105,7 @@ the dealership. The paper follows the IEEE conference structure: theoretical
 background, methodology, gap analysis, discussion, and conclusion.
 
 % ============================================================
-\section{Related Work and Theoretical Background}
+\section{Related Work and Theoretical Background}\label{sec:related}
 % ============================================================
 
 \subsection{Digital Twins}
@@ -153,16 +153,50 @@ While the referenced contributions establish the technical foundations of DT-bas
 \section{Methodology}
 % ============================================================
 
-This paper analyses recent academic work on applying DT and PdM in the automotive industry. A structured Literature Review (LR) was conducted to this end. A central element of the LR is to identify, assess, and interpret current research in a structured, transparent, and replicable manner~\cite{fink_conducting_2019}. This minimises selection bias while mapping the current state of the art on DT and PdM in the automotive industry, and serves to identify existing research gaps and future research directions in the field~\cite{tranfield_towards_2003}.
+This paper combines a structured literature review with a model-based gap
+analysis to answer the research question. The two steps are designed to
+complement each other: the review establishes what is technically possible and
+identifies where existing work stops short; the gap analysis then quantifies the
+business consequences of that shortfall for a concrete reference case.
 
-A gap analysis is conducted as a complementary analytical step. Its central objective is to identify and assess the differences between the current state of automotive aftersales and its potential future development, with particular regard to the combined application of DT and PdM. By systematically comparing current practice with emerging research findings and technological possibilities, the gap analysis highlights areas where significant advancement is yet to be achieved, and provides a basis for deriving concrete implications and future research directions~\cite{cooper_gap_2015}.
+\paragraph{Literature review.}
+The theoretical grounding rests on a targeted review of recent academic
+literature on DT, PdM, and automotive aftersales. Sources were identified
+through database searches on IEEE Xplore, Scopus, and Google Scholar using
+term clusters centred on \emph{digital twin}, \emph{predictive maintenance},
+\emph{automotive}, and \emph{aftersales}, supplemented by reference tracing
+from key contributions. Selection prioritised peer-reviewed work with
+quantitative or architectural results published from 2015 onward, reflecting
+the period in which automotive DT architectures reached practical
+maturity~\cite{lopes2025vehicledt}; foundational conceptual works predating
+this window were included where they introduced concepts still in active
+use~\cite{grieves2014}. The resulting synthesis is presented in
+Section~\ref{sec:related}.
+
+\paragraph{Gap analysis.}
+The gap analysis proceeds in two stages. First, a lifecycle comparison
+(Section~\ref{sec:lifecycle}) contrasts the interval-based current state of
+aftersales against a DT/PdM-enabled target state along the customer journey,
+identifying the structural points at which reactive servicing causes value
+leakage. Second, a quantitative potential assessment translates the identified
+gap into economic KPIs using an explicit assumption framework. Because no
+public, in-service failure dataset exists for the German passenger-car market at
+the resolution required~\cite{abougrad2026xai}, the assessment is model-based:
+assumptions are anchored to published statistics where available and stated as
+set values otherwise, making the model transparent and contestable. A single
+economic lever---the repair capture rate $c$, the share of addressable
+wear-part work retained at the franchised dealership---is used to quantify the
+gap. The target capture rate is derived analytically from the mechanism
+assumptions rather than assumed directly, ensuring internal consistency. A
+one-way sensitivity analysis over $c$ confirms that the economic case holds
+across a plausible parameter band~\cite{cooper_gap_2015}.
 
 
 % ============================================================
 \section{Gap Analysis}
 % ============================================================
 
-\subsection{Lifecycle Comparison}
+\subsection{Lifecycle Comparison}\label{sec:lifecycle}
 
 \subsection{Assumption Framework}
 
@@ -234,25 +268,7 @@ rather than lost to an independent garage. Its complement $(1-c)$ is the
 leakage. The current capture rate, the forecast accuracy, and the proactive-offer
 conversion are stated in Table~\ref{tab:mech}; the target capture rate is not
 assumed independently but derived from them.
- 
-\begin{table}[h!]
-\caption{Mechanism assumptions (Current State $\rightarrow$ Target State).
-  $^\dagger$Conservative lower bound: accuracy improves continuously with data; customers cannot distinguish a false-positive forecast from a genuine recommendation and retain full decision authority to accept or decline.}
-\label{tab:mech}
-\centering
-\small
-\begin{tabularx}{\columnwidth}{@{} c >{\raggedright\arraybackslash}X c >{\raggedright\arraybackslash}p{0.27\columnwidth} @{}}
-\toprule
-\textbf{ID} & \textbf{Assumption (Symbol)} & \textbf{Value} & \textbf{Basis} \\
-\midrule
-A8  & Current capture rate ($\cIst$)       & 0.40            & ${<}$43\,\% share~\cite{dat2025report} \\
-A9  & PdM forecast accuracy ($a$)          & 0.90            & 89--92\,\% LSTM-RUL~\cite{abougrad2026xai}$^\dagger$; formula sets $a{=}1$ (see text) \\
-A10 & Proactive-offer conversion ($k$)     & 0.50            & Conserv.\ estimate; consistent with findings that proactive contact aids uptake~\cite{challagalla_proactive_2009,gonzalez_service_2015} \\
---- & Target capture rate ($\cSoll$, deriv.)& $0.70$         & $\cIst+(1{-}\cIst)\cdot a\cdot k$,\;$a{=}1$ \\
-\bottomrule
-\end{tabularx}
-\end{table}
- 
+
 The target capture rate is derived, not assumed: of the leaked share
 $(1-\cIst)$, the fraction that PdM forecasts ($a$) and that converts on a
 proactive offer ($k$) is recaptured. We set $a{=}1$ because customers cannot
@@ -264,6 +280,24 @@ whether the underlying wear has fully materialised:
        &= 0.40 + 0.60 \cdot 1.0 \cdot 0.50 \notag \\
        &= 0.40 + 0.30 = 0.70 .
 \end{align}
+
+\begin{table}[h!]
+\caption{Mechanism assumptions (Current State $\rightarrow$ Target State).}
+\label{tab:mech}
+\centering
+\small
+\begin{tabularx}{\columnwidth}{@{} c >{\raggedright\arraybackslash}X c >{\raggedright\arraybackslash}p{0.27\columnwidth} @{}}
+\toprule
+\textbf{ID} & \textbf{Assumption (Symbol)} & \textbf{Value} & \textbf{Basis} \\
+\midrule
+A8  & Current capture rate ($\cIst$)       & 0.40            & ${<}$43\,\% share~\cite{dat2025report} \\
+A9  & PdM forecast accuracy ($a$)          & 0.90            & 89--92\,\%~\cite{abougrad2026xai}; $a{=}1$ in model \\
+A10 & Proactive-offer conversion ($k$)     & 0.50            & Conserv.\ est.~\cite{challagalla_proactive_2009,gonzalez_service_2015} \\
+--- & Target capture rate ($\cSoll$, deriv.)& $0.70$         & $\cIst+(1{-}\cIst)\cdot a\cdot k$,\;$a{=}1$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 This construction keeps the estimate conservative and never approaches full capture.
 The conversion rate ($k = 0.50$, A10) is a conservative estimate: proactive,
 personalised maintenance contact from the customer's own dealership is consistent
