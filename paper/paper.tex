@@ -246,21 +246,22 @@ assumed independently but derived from them.
 \textbf{ID} & \textbf{Assumption (Symbol)} & \textbf{Value} & \textbf{Basis} \\
 \midrule
 A8  & Current capture rate ($\cIst$)       & 0.40            & ${<}$43\,\% share~\cite{dat2025report} \\
-A9  & PdM forecast accuracy ($a$)          & 0.90            & 89--92\,\% LSTM-RUL~\cite{abougrad2026xai}$^\dagger$; stated for transparency, not a formula input \\
+A9  & PdM forecast accuracy ($a$)          & 0.90            & 89--92\,\% LSTM-RUL~\cite{abougrad2026xai}$^\dagger$; formula sets $a{=}1$ (see text) \\
 A10 & Proactive-offer conversion ($k$)     & 0.50            & Conserv.\ estimate; consistent with findings that proactive contact aids uptake~\cite{challagalla_proactive_2009,gonzalez_service_2015} \\
---- & Target capture rate ($\cSoll$, deriv.)& ${\approx}0.70$& $\cIst+(1{-}\cIst)\cdot k$ \\
+--- & Target capture rate ($\cSoll$, deriv.)& $0.70$         & $\cIst+(1{-}\cIst)\cdot a\cdot k$,\;$a{=}1$ \\
 \bottomrule
 \end{tabularx}
 \end{table}
  
 The target capture rate is derived, not assumed: of the leaked share
-$(1-\cIst)$, the fraction that converts on a proactive offer ($k$) is
-recaptured. Forecast accuracy (A9) does not enter the formula because customers
-cannot distinguish a true-positive forecast from a false-positive one---both
-result in a service recommendation they may accept or decline at rate $k$:
+$(1-\cIst)$, the fraction that PdM forecasts ($a$) and that converts on a
+proactive offer ($k$) is recaptured. We set $a{=}1$ because customers cannot
+distinguish a true-positive forecast from a false-positive recommendation---every
+offer is evaluated and accepted or declined at rate $a \cdot k$ regardless of
+whether the underlying wear has fully materialised:
 \begin{align}
-\cSoll &= \cIst + (1-\cIst)\cdot k \notag \\
-       &= 0.40 + 0.60 \cdot 0.50 \notag \\
+\cSoll &= \cIst + (1-\cIst)\cdot a \cdot k \notag \\
+       &= 0.40 + 0.60 \cdot 1.0 \cdot 0.50 \notag \\
        &= 0.40 + 0.30 = 0.70 .
 \end{align}
 This construction keeps the estimate conservative and never approaches full capture.
@@ -268,10 +269,7 @@ The conversion rate ($k = 0.50$, A10) is a conservative estimate: proactive,
 personalised maintenance contact from the customer's own dealership is consistent
 with findings that proactive contact aids uptake and loyalty~\cite{challagalla_proactive_2009,gonzalez_service_2015},
 yet price competition and the availability of independent garages prevent full
-conversion. The forecast accuracy (A9) places no binding constraint on the target
-state; accuracy improves with data, and a false-positive forecast imposes no
-cost---the customer cannot distinguish it from a genuine recommendation and
-simply chooses to accept or decline the offer (see Section~\ref{sec:lim}).
+conversion.
 
 \subsection{Potential Assessment}
 
@@ -280,15 +278,15 @@ vehicle, the captured value under each state, and the resulting KPIs at vehicle,
 fleet and lifecycle level.
  
 \paragraph*{Step 1 --- Addressable wear-part value}
-For each part the expected annual value is the number of replacement events per
-year (Table~\ref{tab:wear}) multiplied by its unit value. Summing across A5
-yields the annual addressable wear-part service value per vehicle:
-\begin{align}
-V_{\mathrm{wear}} &= \sum (\text{events/yr} \cdot \text{unit value}) \notag \\
-&= 76.9 + 46.1 + 164.0 + 25.0 + 25.0 + 30.7 \notag \\
-&\approx \eur\,368 \quad \text{per vehicle per year} \notag \\
-&\quad\text{(computed on unrounded rates).}
-\end{align}
+For each part $i$, the expected annual revenue is its replacement rate
+$\lambda_i\;[\mathrm{yr}^{-1}]$ multiplied by its unit price $p_i$; both are
+from Table~\ref{tab:wear}, with $\lambda_i$ computed on unrounded mileage~(A2).
+Summing across~A5 yields the annual addressable wear-part revenue per vehicle:
+\begin{gather*}
+V_{\mathrm{wear}} = \sum_{i}\,\lambda_i \cdot p_i \\
+= 76.9 + 46.1 + 164.0 + 25.0 + 25.0 + 30.7 \\
+\approx \eur\,368 \quad \text{per vehicle per year.}
+\end{gather*}
  
 \paragraph*{Step 2 --- Captured value}
 Applying the capture rates from Table~\ref{tab:mech}:
@@ -340,6 +338,7 @@ The result depends most on the target capture rate. Varying $\cSoll$ across a
 plausible band while holding $V_{\mathrm{wear}}$ and the 50\,\% margin fixed
 gives a per-vehicle gross-profit delta of:
 \begin{align*}
+\cSoll = 0.50 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,18~\text{/veh/yr,} \\
 \cSoll = 0.60 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,37~\text{/veh/yr,} \\
 \cSoll = 0.70 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,55~\text{/veh/yr,} \\
 \cSoll = 0.80 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,74~\text{/veh/yr.}
