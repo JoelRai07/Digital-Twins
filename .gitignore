@@ -1,0 +1,22 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+
+# Auto-generated job-name copies (e.g. paper-Notebook-Joel.tex)
+paper-*.tex
+paper-*.pdf
+paper-*.log
+paper-*.fdb_latexmk
+paper-*.synctex.gz
