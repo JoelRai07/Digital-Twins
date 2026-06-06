@@ -193,14 +193,60 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
 \section{Gap Analysis}
 % ============================================================
 
-\subsection{Lifecycle Comparison}\label{sec:lifecycle}
+\subsection{Future and Present Lifecycle Comparison}\label{sec:lifecycle}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=1.0\columnwidth]{../pictures/Lifecycle Aftersales}
-  \caption{Aftersales lifecycle.}
+  \caption{Aftersales lifecycle: current interval-based state (left) versus DT/PdM-enabled target state (right).}
   \label{fig:lifecycle}
 \end{figure}
+
+The target of this comparison is to expose the structural differences between
+two states of the aftersales lifecycle---one without and one with integration of
+digital-twin-based predictive maintenance---along the full customer journey
+from vehicle operation through service execution to post-repair follow-up. The
+comparison reveals at which points in the lifecycle reactive servicing causes
+value leakage and where a predictive architecture would redirect that value
+back to the franchised dealership.
+
+\paragraph{Current state.}
+In the interval-based current state, the customer journey is driven by fixed
+manufacturer schedules and visible failure signals. The vehicle operates without
+continuous component-state monitoring; no wear forecast is computed during
+normal driving. Service appointments are initiated either by a time- or
+mileage-triggered reminder displayed on the instrument cluster, or by an acute
+fault manifesting as a warning lamp or perceptible degradation in braking or
+ride performance. Both triggers are late-stage events: the mileage interval is
+set conservatively to cover the worst-case fleet population, so most vehicles
+reach the workshop with substantial remaining part life; the fault-driven trigger
+often arrives after the wear limit has already been exceeded~\cite{abougrad2026xai}.
+Because no proactive outreach precedes the fault, the customer exercises free
+choice of workshop at the moment of highest urgency, and the majority of these
+unplanned repairs are captured by independent third-party
+garages~\cite{dat2025report,mckinsey2025dealer}. The dealership's contact with
+the customer is therefore reduced to the statutory inspection cycle, limiting both
+retention and upselling opportunity.
+
+\paragraph{Target state.}
+In the DT/PdM-enabled target state, the vehicle's digital twin continuously
+aggregates sensor streams, OBD signals, and OTA telemetry to maintain an
+up-to-date virtual representation of each monitored
+component~\cite{lopes2025vehicledt}. Machine-learning models operating on this
+virtual representation compute remaining-useful-life estimates for wear parts
+such as brake pads and discs, tyres, and ignition
+components~\cite{kumar2025suspension,karthick2025simulating}. When the forecast
+horizon falls below a configurable threshold, the system generates a proactive
+service recommendation communicated to the customer through the OEM's
+connected-car interface or the dealership's CRM before any visible fault has
+occurred~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025}.
+The appointment is scheduled at the customer's convenience, the required parts
+are pre-ordered, and the workshop interaction is transformed from an unplanned,
+fault-driven event into a planned, evidence-based service visit. Post-service,
+the digital twin resets the component baseline and resumes monitoring, closing
+the lifecycle loop. The dealership thereby intercepts wear-part replacements
+that would otherwise be lost to the independent aftermarket and gains structured
+contact points along the customer journey that the current state does not provide.
 
 \subsection{Assumption Framework}
 
