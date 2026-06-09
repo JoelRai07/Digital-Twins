@@ -111,6 +111,13 @@ The concept of the digital twin was first introduced by Grieves~\cite{grieves201
 
 In the automotive domain, this general architecture maps directly onto the connected vehicle. The physical entity is the vehicle itself, equipped with on-board sensors and an On-Board Diagnostic (OBD) interface. The virtual representation is a cloud-hosted model mirroring component states, degradation histories, and operating conditions. The synchronising link is the OTA telematics connection, which transmits telemetry to the cloud and returns configuration updates to the vehicle~\cite{lopes2025vehicledt,coppola2016connected}. Figure~\ref{fig:dt-architecture} illustrates this three-layer architecture. Lopes et al.~\cite{lopes2025vehicledt} position this configuration within a broader software ecosystem in which the digital twin acts as the authoritative source of vehicle state for all downstream services. Architecturally, automotive digital twins are typically realised as modular, microservice-based platforms. A data ingestion layer normalises heterogeneous sensor streams — including vibration, temperature, voltage, and Controller Area Network (CAN)-bus signals — before forwarding them to a model layer that maintains the current state of each monitored component~\cite{aichi2024multilayered,karthick2025simulating}. The outputs are then exposed to external consumers such as Original Equipment Manufacturer (OEM) backends or customer-facing notification services~\cite{lopes2025vehicledt,abougrad2026xai}, forming the basis for predictive maintenance strategies.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.65\linewidth]{../pictures/dt-architecture.png}
+  \caption{Three-layer architecture of an automotive digital twin.}
+  \label{fig:dt-architecture}
+\end{figure}
+
 
 %\begin{figure}[htbp]
 %  \centering
