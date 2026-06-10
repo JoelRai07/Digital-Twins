@@ -15,4 +15,6 @@ Das ist oft ein stiller Abzugsgrund. Wenn die Lifecycle-Grafik pixelig oder unei
 
 7. Review und Bewertung mit KI
 
+8. Methodik prüfen - Gap Analyse richtig eingehalten?
+
 Parallel Poster machen
