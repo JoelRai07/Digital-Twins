@@ -60,7 +60,7 @@
 %        wichtigste Ergebnisse und Fazit (~150-250 Woerter)
 % ============================================================
 \begin{abstract}
-This paper examines the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. Combining a structured literature review with a model-based gap analysis, we compare an interval-based current state against a digital-twin-enabled target state along the full customer journey, then quantify the business potential using an explicit, transparent assumption framework anchored to published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 55 EUR per vehicle per year and 276,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints grow from 1.5 to roughly 2.5 per year, each representing an additional advisory and upselling opportunity. The findings establish a transparent, contestable model of the potential that dealerships and OEMs can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
+This paper examines the effect of digital-twin-based predictive maintenance on the automotive aftersales domain, focusing on the German passenger-car market. Combining a structured literature review with a model-based gap analysis, we compare an interval-based current state against a digital-twin-enabled target state along the full customer journey, then quantify the business potential using an explicit, transparent assumption framework anchored to published German market data. The results show that proactive, data-driven service recommendations raise the repair capture rate from 40 to 70 percent, increasing wear-part gross profit by approximately 53 EUR per vehicle per year and 263,000 EUR annually across a 5,000-vehicle fleet. Customer touchpoints grow from 1.6 to roughly 2.7 per year, each representing an additional advisory and upselling opportunity. The findings establish a transparent, contestable model of the potential that dealerships and OEMs can use to evaluate and plan the integration of digital-twin-based predictive maintenance into their aftersales operations.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -225,7 +225,11 @@ often arrives after the wear limit has already been exceeded~\cite{abougrad2026x
 Because no proactive outreach precedes the fault, the customer exercises free
 choice of workshop at the moment of highest urgency, and the majority of these
 unplanned repairs are captured by independent third-party
-garages~\cite{dat2025report,mckinsey2025dealer}. The dealership's contact with
+garages~\cite{dat2026report}. This leakage intensifies with
+vehicle age---franchised-dealer share drops from 86\,\% for vehicles under
+three years old to just 39\,\% for those over six years~\cite{dat2026report}---and
+with cost-driven customer behavior: 43\,\% of German vehicle owners now perform
+only the minimum maintenance~\cite{dat2026report}. The dealership's contact with
 the customer is therefore reduced to the statutory inspection cycle, limiting both
 retention and upselling opportunity.
 
@@ -270,12 +274,12 @@ anchored to a published figure where one exists and flagged as a set value other
 \textbf{ID} & \textbf{Assumption} & \textbf{Value} \\
 \midrule
 A1 & Reference vehicle     & Mid-segment ICE passenger car, German market \\
-A2 & Annual mileage        & 12{,}300 km/yr~\cite{kba2024fahrleistung} \\
+A2 & Annual mileage        & 13{,}140 km/yr~\cite{dat2026report} \\
 A3 & First-owner horizon   & 8 years~\cite{mckinsey2025dealer} \\
-A4 & Workshop visits       & 1.5/yr~\cite{dat2025report} \\
+A4 & Workshop visits       & 1.6/yr~\cite{dat2026report} \\
 A5 & Considered wear parts & Brake pads/discs, tyres, wipers, 12\,V battery, spark plugs \\
-A6 & Service gross margin  & 50\,\% (range 45--55\,\%~\cite{mckinsey2025dealer}) \\
-A7 & Franchised share      & 43\,\%~\cite{dat2025report} \\
+A6 & Service gross margin  & 45\,\% (published range 40--55\,\%; lower bound used as conservative estimate for mid-segment, non-premium dealers~\cite{mckinsey2025dealer,zdkzahlen2024}) \\
+A7 & Franchised share      & 47\,\%~\cite{dat2026report} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -287,25 +291,28 @@ between-interval failures and the most common defect categories in the mandatory
 German vehicle safety inspection (Hauptuntersuchung, HU: brakes, lighting,
 tyres)~\cite{tuev2026report}. Prescriptive maintenance and powertrain overhauls
 are out of scope. Typical replacement intervals and representative German market
-prices (parts plus labour, incl.\ VAT) are given in Table~\ref{tab:wear}; prices
-are published market ranges~\cite{adac2024repair} and major automotive
-service providers used at their midpoints. Where a published range exists, a
-representative value within it is used; individual prices may fall toward either end, but the sensitivity analysis brackets this residual uncertainty.
+prices (parts plus labour, incl.\ VAT) are given in Table~\ref{tab:wear} for the
+reference vehicle (A1). All values are midpoints of published German market
+ranges~\cite{adac2024repair}; actual intervals and prices vary substantially by
+vehicle class---compact and entry-level vehicles tend toward the lower end of each
+range, while premium and SUV segments tend toward the upper end. Where a published
+range exists, a representative midpoint value is used; the sensitivity analysis
+brackets this residual uncertainty.
  
 \begin{table}[ht!]
-\caption{Wear-part assumptions (midpoints). Prices cover parts plus labour, incl.\ VAT; midpoints of published German market ranges~\cite{adac2024repair}.}
+\caption{Wear-part assumptions for reference vehicle A1 (mid-segment ICE). All values are midpoints of published German market ranges~\cite{adac2024repair}; actual intervals and prices vary by vehicle class}
 \label{tab:wear}
 \centering
 \begin{tabularx}{\columnwidth}{@{} >{\raggedright\arraybackslash}X c c r @{}}
 \toprule
 \textbf{Part (A5)} & \textbf{Interval} & \textbf{Events/yr} (at A2) & \textbf{Price} \\
 \midrule
-Brake pads (per axle)      & 40{,}000 km  & 0.31 & \eur\,250 \\
-Brake discs (+pads, front) & 120{,}000 km & 0.10 & \eur\,450 \\
-Tyres (set of 4)           & 45{,}000 km  & 0.27 & \eur\,600 \\
+Brake pads (per axle)      & 40{,}000 km  & 0.33 & \eur\,250 \\
+Brake discs (+pads, front) & 120{,}000 km & 0.11 & \eur\,450 \\
+Tyres (set of 4)           & 45{,}000 km  & 0.29 & \eur\,600 \\
 Wiper blades (pair)        & 1 year       & 1.00 & \eur\,25  \\
 12\,V battery (fitted)     & 6 years      & 0.17 & \eur\,150 \\
-Spark plugs (set)          & 60{,}000 km  & 0.21 & \eur\,150 \\
+Spark plugs (set)          & 60{,}000 km  & 0.22 & \eur\,150 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -328,7 +335,7 @@ whether the underlying wear has fully materialised:
        &= 0.40 + 0.60 \cdot 1.0 \cdot 0.50 \notag \\
        &= 0.40 + 0.30 = 0.70 .
 \end{align}
-
+\vspace{-\intextsep}
 \begin{table}[h!]
 \caption{Mechanism assumptions (Current State $\rightarrow$ Target State).}
 \label{tab:mech}
@@ -338,8 +345,8 @@ whether the underlying wear has fully materialised:
 \toprule
 \textbf{ID} & \textbf{Assumption (Symbol)} & \textbf{Value} & \textbf{Basis} \\
 \midrule
-A8  & Current capture rate ($\cIst$)       & 0.40            & ${<}$43\,\% share~\cite{dat2025report} \\
-A9  & PdM forecast accuracy ($a$)          & 0.90            & 89--92\,\%~\cite{abougrad2026xai}; $a{=}1$ in model \\
+A8  & Current capture rate ($\cIst$)       & 0.40            & ${<}$47\,\% share~\cite{dat2026report} \\
+A9  & PdM forecast accuracy ($a$)          & 1.0 (model)     & reported 89--92\,\%~\cite{abougrad2026xai}; set to 1 (see text) \\
 A10 & Proactive-offer conversion ($k$)     & 0.50            & Conserv.\ est.~\cite{challagalla_proactive_2009,gonzalez_service_2015} \\
 --- & Target capture rate ($\cSoll$, deriv.)& $0.70$         & $\cIst+(1{-}\cIst)\cdot a\cdot k$,\;$a{=}1$ \\
 \bottomrule
@@ -350,7 +357,7 @@ This construction keeps the estimate conservative and never approaches full capt
 The conversion rate ($k = 0.50$, A10) is a conservative estimate: proactive,
 personalised maintenance contact from the customer's own dealership is consistent
 with findings that proactive contact aids uptake and loyalty~\cite{challagalla_proactive_2009,gonzalez_service_2015},
-yet price competition from independent garages and customer inertia toward switching service providers prevent full conversion, making 0.50 a deliberate floor rather than a central estimate.
+yet price competition from independent garages and customer inertia toward switching service providers prevent full conversion, making 0.50 a deliberate floor rather than a central estimate. The value of $k$ is not empirically measured in this context; calibrating it against real customer-behavior data is identified as a direct future-work priority (Section~\ref{sec:future}).
 
 \subsection{Potential Assessment}
 
@@ -365,15 +372,15 @@ from Table~\ref{tab:wear}, with $\lambda_i$ computed on unrounded mileage~(A2).
 Summing across~A5 yields the annual addressable wear-part revenue per vehicle:
 \begin{gather*}
 V_{\mathrm{wear}} = \sum_{i}\,\lambda_i \cdot p_i \\
-= 76.9 + 46.1 + 164.0 + 25.0 + 25.0 + 30.7 \\
-\approx \eur\,368 \quad \text{per vehicle per year.}
+= 82.1 + 49.3 + 175.2 + 25.0 + 25.0 + 32.9 \\
+\approx \eur\,389 \quad \text{per vehicle per year.}
 \end{gather*}
  
 \paragraph*{Step 2 --- Captured value}
 Applying the capture rates from Table~\ref{tab:mech}:
 \begin{align}
-\text{Captured}_{\mathrm{cur}} &= \cIst  \cdot V_{\mathrm{wear}} = 0.40 \cdot 368 \approx \eur\,147~\text{/veh/yr,} \\
-\text{Captured}_{\mathrm{tgt}} &= \cSoll \cdot V_{\mathrm{wear}} = 0.70 \cdot 368 \approx \eur\,258~\text{/veh/yr.}
+\text{Captured}_{\mathrm{cur}} &= \cIst  \cdot V_{\mathrm{wear}} = 0.40 \cdot 389 \approx \eur\,156~\text{/veh/yr,} \\
+\text{Captured}_{\mathrm{tgt}} &= \cSoll \cdot V_{\mathrm{wear}} = 0.70 \cdot 389 \approx \eur\,273~\text{/veh/yr.}
 \end{align}
 Applying the service gross margin (A6) gives the captured gross profit.
  
@@ -393,10 +400,10 @@ vehicles.
 \textbf{KPI} & \textbf{Current} & \textbf{Target} & \textbf{$\Delta$} \\
 \midrule
 Repair capture rate              & 40\,\%     & 70\,\%      & +30\,pp \\
-Wear-part revenue (/veh/yr)      & \eur\,147  & \eur\,258   & +\eur\,110 \\
-Gross profit (/veh/yr)           & \eur\,74   & \eur\,129   & +\eur\,55 \\
-Fleet GP, 5{,}000 veh (/yr)      & \eur\,368k & \eur\,644k  & +\eur\,276k \\
-Customer touchpoints (/yr)       & 1.5        & $\sim$2.5   & +1.0 \\
+Wear-part revenue (/veh/yr)      & \eur\,156  & \eur\,273   & +\eur\,117 \\
+Gross profit (/veh/yr)           & \eur\,70   & \eur\,123   & +\eur\,53 \\
+Fleet GP, 5{,}000 veh (/yr)      & \eur\,351k & \eur\,613k  & +\eur\,263k \\
+Customer touchpoints (/yr)       & 1.6        & $\sim$2.7   & +1.1 \\
 First-pass inspection rate       & baseline   & improved    & qual. \\
 Lifecycle retention~\cite{mckinsey2025dealer} & $\sim$25\,\% & sustained & qual. \\
 \bottomrule
@@ -405,30 +412,31 @@ Lifecycle retention~\cite{mckinsey2025dealer} & $\sim$25\,\% & sustained & qual.
  
 The proactive touchpoint count rises because each high-value forecast event
 (the wear parts in Table~\ref{tab:wear} excluding the wiper case,
-$\approx$~1.0 events/yr) triggers an outreach contact that did not exist in the
-interval-based current state, roughly doubling the meaningful contact frequency
-from 1.5 to about 2.5 per year, assuming forecast contacts fall outside
+$\approx$~1.1 events/yr) triggers an outreach contact that did not exist in the
+interval-based current state, increasing the meaningful contact frequency
+from 1.6 to about 2.7 per year, assuming forecast contacts fall outside
 scheduled service visits; overlap would reduce the net gain modestly. Each additional contact is also an advisory and
 upselling opportunity; the parts targeted---brakes and tyres above all---are
 among the most common defect categories in the German mandatory vehicle safety
 inspection (HU)~\cite{tuev2026report}, so proactive replacement directly improves the
-customer's first-pass inspection rate, a tangible and communicable benefit.
+customer's first-pass inspection rate, a tangible and communicable benefit---currently
+60\,\% of franchised-dealer customers report not being approached about any
+additional service at their last visit~\cite{dat2026report}.
  
 \paragraph*{Sensitivity}
 The result depends most on the target capture rate. Varying $\cSoll$ across a
-plausible band while holding $V_{\mathrm{wear}}$ and the 50\,\% margin fixed
+plausible band while holding $V_{\mathrm{wear}}$ and the 45\,\% margin (A6) fixed
 gives a per-vehicle gross-profit delta of:
 \begin{align*}
 \cSoll = 0.50 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,18~\text{/veh/yr,} \\
-\cSoll = 0.60 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,37~\text{/veh/yr,} \\
-\cSoll = 0.70 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,55~\text{/veh/yr,} \\
-\cSoll = 0.80 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,74~\text{/veh/yr.}
+\cSoll = 0.60 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,35~\text{/veh/yr,} \\
+\cSoll = 0.70 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,53~\text{/veh/yr,} \\
+\cSoll = 0.80 &\;\rightarrow\; \Delta \text{ gross profit} \approx \eur\,70~\text{/veh/yr.}
 \end{align*}
 Even at the conservative end the dealership captures additional gross profit on
 the order of tens of euros per vehicle per year, scaling to a six-figure annual
-sum across a mid-size fleet---before accounting for the compounding retention
-effect, namely that dealer-serviced customers are substantially more likely to
-purchase their next vehicle from the same dealership~\cite{coxautomotive2025} (US data). The
+sum across a mid-size fleet---compounding effects are likely given that 90\,\% of
+German vehicle owners consistently return to the same workshop~\cite{dat2026report}. The
 economic case is therefore robust to the assumptions rather than an artefact of
 any single optimistic value.
 
@@ -439,13 +447,15 @@ limitations. First, the figures are illustrative: $V_{\mathrm{wear}}$, the captu
 rates and the conversion factor are anchored to published market and accuracy
 data but are not fitted to an operational dataset, and no prototype was built;
 the contribution is a transparent model of the potential, not a measured
-outcome. Second, the PdM forecast accuracy (A9, 90\,\%) is reported for transparency
+outcome. The first-owner horizon (A3: 8~years) is an upper-bound lifecycle horizon; the
+DAT Report~2026 records a median holding period of 6.2~years~\cite{dat2026report},
+so fleet-lifetime totals are correspondingly optimistic. Second, the PdM forecast accuracy (A9, 90\,\%) is reported for transparency
 but does not enter the capture-rate formula. Because a proactive service
 recommendation looks identical to the customer whether the underlying forecast
 is correct or slightly premature, both true-positive and false-positive
 predictions generate the same type of offer, accepted or declined at rate $k$.
 Accuracy will improve continuously as in-service data accumulates~\cite{abougrad2026xai},
-but the model outcome does not depend on reaching any particular accuracy threshold. Third, and most
+but the model outcome does not depend on reaching any particular accuracy threshold. A related long-run risk is trust erosion: if the system persistently recommends replacements the customer later judges premature, the effective conversion rate $k$ will fall below the modelled floor over repeated interactions; the sensitivity analysis brackets this effect indirectly through the lower-$\cSoll$ scenarios. Third, and most
 consequential for practice, the target state presumes the dealership can actually
 obtain the vehicle's telemetry. Under the EU Data Act (applicable from
 12~September~2025) the user is the vehicle owner or driver, who may authorise a
@@ -507,16 +517,16 @@ fault-driven appointments with proactive, evidence-based service recommendations
 A quantitative potential assessment, anchored to published German market data,
 translated this shift into concrete KPIs: under a conservative conversion
 assumption ($k = 0.50$), the repair capture rate rises from 40\,\% to 70\,\%,
-increasing gross profit by approximately \euro\,55 per vehicle per year and
-\euro\,276k annually across a 5\,000-vehicle fleet. Customer touchpoints grow
-from 1.5 to roughly 2.5 per year, each an additional advisory and upselling
+increasing gross profit by approximately \euro\,53 per vehicle per year and
+\euro\,263k annually across a 5\,000-vehicle fleet. Customer touchpoints grow
+from 1.6 to roughly 2.7 per year, each an additional advisory and upselling
 opportunity. The sensitivity analysis confirmed the economic case is robust
 across the full plausible parameter range. The dominant adoption barrier is
 non-technical: access to in-vehicle telemetry requires customer consent and OEM
 provisioning under the EU Data Act and GDPR, a hurdle any real-world deployment
 must resolve.
 
-\subsection{Future Work}
+\subsection{Future Work}\label{sec:future}
 
 Three directions stand out for future research. First, the assumption framework
 should be validated against an operational DT deployment, replacing modelled
