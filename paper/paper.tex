@@ -85,7 +85,7 @@ repair and one of only a few yearly customer contacts---each also a chance to
 advise, retain, and sell \cite{challagalla_proactive_2009,sabbagha_impact_2016}.
 
 Digital-twin-based predictive maintenance (PdM) can turn this data into
-foresight. A digital twin (DT) maintains a synchronised virtual representation of
+foresight. A digital twin (DT) maintains a synchronized virtual representation of
 the vehicle \cite{grieves2014}, against which machine-learning models forecast
 the remaining useful life of components and recommend replacement before
 failure---keeping the customer at the dealership and enabling transparent,
@@ -151,40 +151,25 @@ While the referenced contributions establish the technical foundations of DT-bas
 \section{Methodology}
 % ============================================================
 
-This paper combines a structured literature review with a model-based gap
-analysis to answer the research question. The two steps are designed to
-complement each other: the review establishes what is technically possible and
-identifies where existing work stops short; the gap analysis then quantifies the
-business consequences of that shortfall for a concrete reference case.
-
-\paragraph{Literature review.}
-The theoretical grounding rests on a targeted review of recent academic
-literature on DT, PdM, and automotive aftersales. Sources were identified
-through database searches on IEEE Xplore, Scopus, and Google Scholar using
-term clusters centred on \emph{digital twin}, \emph{predictive maintenance},
-\emph{automotive}, and \emph{aftersales}, supplemented by reference tracing
-from key contributions. Selection prioritised peer-reviewed work with
-quantitative or architectural results published from 2015 onward, reflecting
-the period in which automotive DT architectures reached practical
-maturity~\cite{lopes2025vehicledt}; foundational conceptual works predating
-this window were included where they introduced concepts still in active
-use~\cite{grieves2014}. The resulting synthesis is presented in
-Section~\ref{sec:related}.
+Building on the theoretical background established in Section~\ref{sec:related},
+this paper applies a model-based gap analysis to answer the research question.
 
 \paragraph{Gap analysis.}
-The gap analysis proceeds in two stages. First, a lifecycle comparison
-(Section~\ref{sec:lifecycle}) contrasts the interval-based current state of
-aftersales against a DT/PdM-enabled target state along the customer journey,
-identifying the structural points at which reactive servicing causes value
-leakage. Second, a quantitative potential assessment translates the identified
-gap into economic KPIs using an explicit assumption framework. Because no
-public, in-service failure dataset exists for the German passenger-car market at
-the resolution required~\cite{abougrad2026xai}, the assessment is model-based:
-assumptions are anchored to published statistics where available and stated as
-set values otherwise, making the model transparent and contestable. A single
-economic lever---the repair capture rate $c$, the share of addressable
-wear-part work retained at the franchised dealership---is used to quantify the
-gap. The target capture rate is derived analytically from the mechanism
+A model-based rather than experimental approach is adopted for two reasons:
+deploying a prototype dealership system lies outside the scope of this paper,
+and no public in-service wear-part failure dataset for the German passenger-car
+market exists at the required resolution~\cite{abougrad2026xai}. Explicit
+assumptions anchored to published German market statistics therefore substitute
+for empirical calibration, with the trade-off that the result is a transparent,
+contestable estimate of potential rather than a measured outcome.
+The analysis proceeds in two stages. First, a lifecycle comparison
+(Section~\ref{sec:lifecycle}) contrasts the interval-based current state against
+a DT/PdM-enabled target state along the customer journey, identifying the
+structural points at which reactive servicing causes value leakage. Second, a
+quantitative potential assessment translates the identified gap into economic
+KPIs. A single economic lever---the repair capture rate $c$, the share of
+addressable wear-part work retained at the franchised dealership---is used to
+quantify the gap; its target value is derived analytically from the mechanism
 assumptions rather than assumed directly, ensuring internal consistency. A
 one-way sensitivity analysis over $c$ confirms that the economic case holds
 across a plausible parameter band~\cite{cooper_gap_2015}.
@@ -203,13 +188,11 @@ across a plausible parameter band~\cite{cooper_gap_2015}.
   \label{fig:lifecycle}
 \end{figure}
 
-The target of this comparison is to expose the structural differences between
-two states of the aftersales lifecycle---one without and one with integration of
-digital-twin-based predictive maintenance---along the full customer journey
-from vehicle operation through service execution to post-repair follow-up. The
-comparison reveals at which points in the lifecycle reactive servicing causes
-value leakage and where a predictive architecture would redirect that value
-back to the franchised dealership.
+Figure~\ref{fig:lifecycle} contrasts the two states side by side, tracing the
+customer journey from vehicle operation through service execution to post-repair
+follow-up, and reveals at which points reactive servicing causes value leakage
+and where a predictive architecture would redirect that value back to the
+franchised dealership.
 
 \paragraph{Current state.}
 In the interval-based current state, the customer journey is driven by fixed
@@ -472,34 +455,47 @@ the dealership's PdM capability; the shift to BEVs will erode ICE-specific wear-
 \section{Discussion and Recommendations}
 % ============================================================
 
-% -------------------------------------------------------
-% TODO 
-% -------------------------------------------------------
+\subsection{Interpretation of Results}
 
-% --- Absatz 1: Interpretation der Ergebnisse ---
-% - €55/Fzg/Jahr klingt gering, skaliert aber: 5.000 Fzg × 8 Jahre (A3) → >2 Mio. € kumuliert
-% - Touchpoint-Gewinn (+1,0/Jahr) ist der eigentliche Werthebel: jeder Kontakt = Beratungs- und Upselling-Chance
-% - Händler-seitig geht es nicht nur um Teile-Marge, sondern um Kundenbindung:
-%   dealer-serviced customers kaufen nächstes Fahrzeug deutlich häufiger beim selben Händler (Cox Automotive 2025)
-% - Sensitivitätsanalyse zeigt: selbst bei k=0,50 (konservativ) bleibt der Business Case positiv
+The per-vehicle gross-profit uplift of \euro\,53 per year scales to \euro\,263k
+annually across a 5{,}000-vehicle fleet and compounds to approximately \euro\,2.1
+million over the eight-year first-owner horizon (A3). The parts margin is,
+however, only the visible component of the value: each of the additional 1.1
+contact events per vehicle per year is simultaneously an advisory opportunity and
+a loyalty-reinforcing interaction, consistently linked to increased repurchase
+intent at the originating dealership~\cite{challagalla_proactive_2009,gonzalez_service_2015}.
+The sensitivity analysis confirms robustness: even at $\cSoll = 0.50$, the
+fleet-level gain remains approximately \euro\,90k per year---a positive business
+case under any plausible conversion scenario.
 
-% --- Absatz 2: Nicht-technische Hürde als eigentlicher Engpass ---
-% - Technologie-Stack (DT, ML, OTA) ist erprobt und verfügbar → nicht die Barriere
-% - Datenzugang ist die eigentliche Hürde: EU Data Act (ab Sept. 2025), GDPR, OEM-Kooperation nötig
-% - OEM entscheidet, ob und in welchem Format Telemetrie an Händler weitergegeben wird
-% - Empfehlung: Händler sollten Consent-Infrastruktur (Kundeneinwilligung, CRM-Integration) aktiv aufbauen
-%   statt auf OEM-Standardlösung zu warten
-% - Tyres-Leck und BEV-Shift (HV-Batterie statt Zündkerzen) als weitere Scope-Risiken nennen
+\subsection{The Non-Technical Barrier}
 
-% --- Absatz 3: Implikationen für Praxis und Forschung ---
-% Praxis (Händler):
-%   - PdM als Erweiterung des CRM denken, nicht als IT-Projekt
-%   - Proaktive Kundenansprache + Terminplanung = Werthebel, nicht die Prognose-Genauigkeit selbst
-%   - Pilotstart mit Modellen, die OEM-Telemetrie bereits freigeben (z.B. bestimmte Marken über connected-car APIs)
-% Forschung:
-%   - Modell ist transparent aber nicht empirisch validiert → Pilotprojekt mit echten In-Service-Daten als nächster Schritt
-%   - Conversion Rate k=0,50 ist gesetzt, nicht gemessen → Verhaltensstudie zu PdM-Annahme-Raten wäre wertvoll
-%   - Framework auf BEV ausweiten (HV-Batterie SoH als dominanter Prognose-Target)
+The DT/ML/OTA technology stack is commercially mature and not the binding
+constraint~\cite{lopes2025vehicledt,abougrad2026xai}. The real bottleneck is
+telemetry access: under the EU Data Act (applicable from 12~September 2025),
+in-vehicle data reaches the dealer only with the owner's explicit consent and on
+OEM-provisioned terms~\cite{eu2023dataact}, making the dealer dependent on two
+actors it does not control. The practical recommendation is therefore to build
+consent infrastructure---opt-in flows integrated into the CRM, clear customer
+value propositions---as a prerequisite rather than an afterthought, independently
+of any specific DT deployment decision.
+
+\subsection{Implications for Practice and Research}
+
+Practitioners should position DT-based PdM as a CRM extension rather than an IT
+project. The measurable value driver is the quality of proactive outreach, not
+forecast accuracy~\cite{challagalla_proactive_2009,gonzalez-pridaDigitalTransformationAftersales2025};
+appointment-scheduling integration and communication design should therefore
+precede algorithm tuning. A phased entry via OEM brands that already expose
+connected-car telemetry APIs allows conversion rates to be measured before a
+broader infrastructure commitment is made.
+
+For researchers, the priority is empirical validation of the conversion
+rate~$k$, which is modelled here but not fitted to operational data. A field
+study measuring opt-in and outreach acceptance rates would directly calibrate
+this parameter. A second priority is extending the framework to battery electric
+vehicles, where the high-voltage battery's state of health replaces spark plugs
+as the dominant prognostic target.
 
 
 % ============================================================
@@ -524,14 +520,18 @@ opportunity. The sensitivity analysis confirmed the economic case is robust
 across the full plausible parameter range. The dominant adoption barrier is
 non-technical: access to in-vehicle telemetry requires customer consent and OEM
 provisioning under the EU Data Act and GDPR, a hurdle any real-world deployment
-must resolve.
+must resolve. In answer to the research question: the effect of DT-based PdM on
+automotive aftersales is a measurable shift of wear-part revenue from the
+independent aftermarket to the franchised dealership, accompanied by a structural
+increase in customer contact frequency that amplifies retention and upselling value
+beyond the parts margin alone.
 
 \subsection{Future Work}\label{sec:future}
 
 Three directions stand out for future research. First, the assumption framework
 should be validated against an operational DT deployment, replacing modelled
 KPIs with measured outcomes and calibrating the conversion rate $k$ under real
-customer-behaviour conditions. Second, the data-access challenge warrants
+customer-behavior conditions. Second, the data-access challenge warrants
 dedicated study: viable consent architectures and OEM-dealer data-sharing
 agreements under the EU Data Act need to be developed and their effect on
 customer opt-in quantified. Third, the framework should be extended to battery
@@ -549,15 +549,6 @@ ICE-specific components such as spark plugs.
 \bibliographystyle{IEEEtran}
 \bibliography{references}
  
- 
-% ============================================================
-%  KI-ERKLAERUNG
-%  Laut DHBW-Vorgabe auf einer EIGENEN SEITE am Ende,
-%  damit sie vor der Einreichung leicht abgetrennt werden kann.
-%  Diese Seite erscheint NICHT im Sammelband.
-%  HINWEIS: Eintraege unten sind BEISPIELE -- vor Abgabe
-%  wahrheitsgemaess an die tatsaechliche Nutzung anpassen.
-% ============================================================
 \onecolumn
 \newpage
 \section*{Verwendung Generativer KI-Systeme}
